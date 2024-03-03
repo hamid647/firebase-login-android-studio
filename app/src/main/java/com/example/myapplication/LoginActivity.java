@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailTextView, passwordTextView;
-    private Button Btn;
+    private Button Btn, RegButton;;
     private ProgressBar progressbar;
 
     private FirebaseAuth mAuth;
@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         emailTextView = findViewById(R.id.email);
         passwordTextView = findViewById(R.id.password);
         Btn = findViewById(R.id.login);
+        RegButton = findViewById(R.id.registrationc);
         progressbar = findViewById(R.id.progressBar);
 
         // Set on Click Listener on Sign-in button
@@ -44,6 +45,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 loginUserAccount();
+            }
+        });
+        RegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to LoginActivity
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
             }
         });
     }

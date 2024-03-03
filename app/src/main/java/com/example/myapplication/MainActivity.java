@@ -1,28 +1,34 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
+import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
-import android.content.Intent;
 import android.view.View;
-import android.widget.Toast;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    @SuppressLint("MissingInflatedId")
+    TextView textView;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // initialising all views through id defined above
-        TextView forgetfulness = findViewById(R.id.gfg);
-        forgetfulness.setText(
-                "(Gullubutt)");
+        // assigning ID of the toolbar to a variable
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        // using toolbar as ActionBar
+        setSupportActionBar(toolbar);
+
+        // Display application icon in the toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.app_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        // assigning ID of textView2 to a variable
+
+
+
     }
 }
